@@ -17,8 +17,40 @@ impl Ticket {
     // You'll have to use what you learned in the previous exercises,
     // as well as some `String` methods. Use the documentation of Rust's standard library
     // to find the most appropriate options -> https://doc.rust-lang.org/std/string/struct.String.html
+    #[allow(dead_code)]
     fn new(title: String, description: String, status: String) -> Self {
-        todo!();
+        let title_length = title.len();
+        let description_length = description.len();
+        if title_length > 50{
+            panic!("TTitle cannot be longer than 50 bytes");
+        }
+
+        if title.is_empty() {
+            panic!("Title cannot be empty")
+        }
+        if description_length > 50 {
+            panic!("Description cannot be longer than 500 bytes");
+        }
+
+        if description.is_empty() {
+            panic!("Description cannot be empty")
+        }
+        // let status_list = vec!["To-Do", "In Progress", "Done"];
+        // let fun_status = &status;
+        // if !status_list.contains(fun_status){
+        //     panic!("Only `To-Do`, `In Progress`, and `Done` statuses are allowed")
+        // }
+        if status != "To-Do" && status != "In Progress" && status != "Done"{
+            panic!("Only `To-Do`, `In Progress`, and `Done` statuses are allowed");
+        }
+        // if status_list.contains(&self.status.as_str()){
+        //     println!("Status is included in the list, status:{}", self.status);
+        // }else{
+        //     panic!("Not allowed status");
+        // }
+        // if status != "To-Do"
+
+        // todo!();
         Self {
             title,
             description,
